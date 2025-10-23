@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Jieun Yoo</title>
   <style>
     body {
@@ -19,7 +19,7 @@
       background-color: #ffffff;
       border: 1px solid #ddd;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     h1 {
@@ -129,6 +129,18 @@
       color: #0056b3;
     }
 
+    /* Publications list */
+    .publication-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .publication-list li {
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
     footer {
       text-align: center;
       font-size: 14px;
@@ -138,15 +150,15 @@
   </style>
 </head>
 <body>
-
   <div class="container">
     <h1>Jieun Yoo</h1>
-    <img src="profile.jpg" alt="Jieun Yoo photo" class="profile-photo">
+    <img src="profile.jpg" alt="Jieun Yoo photo" class="profile-photo" />
 
     <!-- Tabs -->
     <div class="tabs">
       <button class="tab active" onclick="showTab('research')">Research</button>
       <button class="tab" onclick="showTab('teaching')">Teaching</button>
+      <button class="tab" onclick="showTab('publications')">Publications</button>
     </div>
 
     <!-- Research content -->
@@ -154,15 +166,14 @@
       <p>
         Hi. I completed my PhD in May 2025 at Univ. Illinois Chicago (UIC) in the field of experimental particle physics. I'm interested in searches for new physics, and in developing the next generation of detectors that will help us push the bounds of our knowledge of the physical world.
       </p>
- 
- <p>
-    As a member of the CMS collaboration, one of the largest scientific experiments at the Large Hadron Collider (LHC), I developed expertise in machine learning, precision Higgs boson physics, and silicon detectors. Within the Smart Pixels collaboration, I helped launch a hardware-software co-designed neural network implemented on an ASIC chip to address the challenge of large data volumes at higher luminosity and to enable new physics searches.
-  </p>
 
-  <p>
-    Previously, I was a member of the T2K and CAPTAIN collaborations, both neutrino experiments. I contributed to detector studies for the T2K Pi-Zero Detector (P0D) in Tokai, Japan, and participated in the first neutron beam runs using the CAPTAIN liquid argon time projection chamber (LArTPC) installed in the beamline at Los Alamos National Laboratory (LANL).
-  </p>
+      <p>
+        As a member of the CMS collaboration, one of the largest scientific experiments at the Large Hadron Collider (LHC), I developed expertise in machine learning, precision Higgs boson physics, and silicon detectors. Within the Smart Pixels collaboration, I helped launch a hardware-software co-designed neural network implemented on an ASIC chip to address the challenge of large data volumes at higher luminosity and to enable new physics searches.
+      </p>
 
+      <p>
+        Previously, I was a member of the T2K and CAPTAIN collaborations, both neutrino experiments. I contributed to detector studies for the T2K Pi-Zero Detector (P0D) in Tokai, Japan, and participated in the first neutron beam runs using the CAPTAIN liquid argon time projection chamber (LArTPC) installed in the beamline at Los Alamos National Laboratory (LANL).
+      </p>
 
       <div class="links">
         <a href="https://scholar.google.com/citations?user=SLqknaIAAAAJ&hl=en" target="_blank">Google Scholar</a>
@@ -171,33 +182,76 @@
 
     <!-- Teaching content -->
     <div id="teaching" class="tab-content">
-
+    
       <p>
-        I am passionate about teaching and mentoring students. 
-        I strive to help students build strong conceptual understanding and 
-        practical skills through problem-solving, experiments, and discussion.
+        I am passionate about teaching and mentoring students. I strive to help students build strong conceptual understanding and practical skills through problem-solving, experiments, and discussion.
       </p>
 
+   
     </div>
 
+    <!-- Publications content -->
+    <div id="publications" class="tab-content">
+        <ul class="publication-list" style="list-style-type:none; padding-left:0;">
+          <li style="margin-bottom: 1em;">
+            <strong>Yoo, J.</strong>, Dickinson, J., Swartz, M., Di Guglielmo, G., Bean, A., Berry, D., Blanco Valentin, M., DiPetrillo, K., Fahim, F. K., Gray, L., Hirschauer, J., Kulkarni, S., Lipton, R., Maksimovic, P., Mills, C., Neubauer, M., Parpillon, B., Pradhan, G., Syal, C., Tran, N., Wen, D., & Young, A.
+            “<a href="https://iopscience.iop.org/article/10.1088/2632-2153/ad6a00" target="_blank" style="color:#0056b3; text-decoration:none;">Smart pixel sensors: Towards on-sensor filtering of pixel clusters with deep learning</a>”,
+            <em>Machine Learning: Science and Technology</em>, 2024.
+          </li>
+          <li style="margin-bottom: 1em;">
+            Taylor, C., Bhandari, B., Bian, J., Bilton, K., Callahan, C., Chaves, J., Chen, H., Cline, D., Cooper, R., Danielson, D., Danielson, J., Dokania, N., Elliot, S., Fernandes, S., Gardiner, S., Garvey, G., Gehman, V., Giuliani, F., Glavin, S., Gold, M., Grant, C., Guardincerri, E., Haines, T., Higuera, A., Ji, J., Kadel, R., Kamp, N., Karlin, A., Ketchum, W., Koerner, L., Lee, D., Lee, K., Liu, Q., Locke, S., Louis, W., Madigan, P., Manalaysay, A., Maricic, J., Martin, E., Martinez, M., Martynenko, S., Mauger, C., McGrew, C., Medina, J., Medina, P., Mills, A., Mills, G., Mirabal-Martinez, J., Olivier, A., Pantic, E., Philipbar, B., Pitcher, C., Radeka, V., Ramsey, J., Rielage, K., Rosen, M., Sanchez, A., Shin, J., Sinnis, G., Smy, M., Sondheim, W., Stancu, I., Sterbenz, C., Sun, Y., Svoboda, R., Teymourian, A., Thorn, C., Tull, C., Tzanov, M., Van de Water, R., Walsh, N., Wang, H., Wang, Y., Yanagisawa, C., Yarritu, A., & <strong>Yoo, J.</strong>
+            “<a href="https://doi.org/10.1016/j.nima.2021.165131" target="_blank" style="color:#0056b3; text-decoration:none;">The mini-captain liquid argon time projection chamber</a>”,
+            <em>Nuclear Instruments and Methods in Physics Research Section A</em>, vol. 1001, p. 165131, 2021.
+          </li>
+        </ul>
+
+        <h3 style="color:#1a1a1a; border-bottom: 2px solid #ddd; padding-bottom: 6px; margin-top: 40px;">Conference Proceedings</h3>
+
+        <ul class="conference-list" style="list-style-type:none; padding-left:0;">
+          <li style="margin-bottom: 1em;">
+            Miniskar, N. R., Vanna-Iampikul, P., Young, A., Lim, S. K., Liu, F., <strong>Yoo, J.</strong>, Mills, C., Tran, N., Fahim, F., & Vetter, J. S.
+            “<a href="https://www.osti.gov/servlets/purl/1997610" style="color:#0056b3; text-decoration:none;">A 3d implementation of convolutional neural network for fast inference</a>”,
+            in <em>2023 IEEE International Symposium on Circuits and Systems (ISCAS)</em>, 2023.
+          </li>
+          <li style="margin-bottom: 1em;">
+            Kulkarni, S. R., Young, A., Date, P., Rao Miniskar, N., Vetter, J., Fahim, F., Parpillon, B., Dickinson, J., Tran, N., <strong>Yoo, J.</strong>, Mills, C., Swartz, M., Maksimovic, P., Schuman, C., & Bean, A.
+            “<a href="https://dl.acm.org/doi/pdf/10.1145/3589737.3605976" style="color:#0056b3; text-decoration:none;">On-sensor data filtering using neuromorphic computing for high energy physics experiments</a>”,
+            in <em>Proceedings of the 2023 International Conference on Neuromorphic Systems</em>, ser. ICONS ’23, Santa Fe, NM, USA: Association for Computing Machinery, 2023.
+          </li>
+          <li style="margin-bottom: 1em;">
+            Pata, J., Duarte, J., Mokhtar, F., Wulff, E., <strong>Yoo, J.</strong>, Vlimant, J.-R., Pierini, M., Girone, M., and on behalf of the CMS Collaboration,
+            “<a href="https://iopscience.iop.org/article/10.1088/1742-6596/2438/1/012100/pdf" style="color:#0056b3; text-decoration:none;">Machine Learning for Particle Flow Reconstruction at CMS</a>”,
+            vol. 2438, <em>Journal of Physics: Conference Series</em>, Feb. 2023.
+          </li>
+        </ul>
+
+        
+
+      
+      <div class="links" style="margin-top: 20px;">
+        <a href="https://scholar.google.com/citations?user=SLqknaIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      </div>
+
+    </div>
   </div>
 
-  <footer>
-    © 2025 Jieun Yoo
-  </footer>
+  <footer>© 2025 Jieun Yoo</footer>
 
   <script>
     function showTab(tabId) {
       // Hide all tab contents
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll(".tab-content").forEach((el) =>
+        el.classList.remove("active")
+      );
       // Remove active class from all tabs
-      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll(".tab").forEach((el) =>
+        el.classList.remove("active")
+      );
       // Activate selected tab and content
-      document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+      document.getElementById(tabId).classList.add("active");
+      event.target.classList.add("active");
     }
   </script>
-
 </body>
 </html>
 
