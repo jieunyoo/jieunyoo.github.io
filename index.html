@@ -156,9 +156,10 @@
 
     <!-- Tabs -->
     <div class="tabs">
-      <button class="tab active" onclick="showTab('research')">Research</button>
-      <button class="tab" onclick="showTab('teaching')">Teaching</button>
-      <button class="tab" onclick="showTab('publications')">Publications</button>
+      <button class="tab active" onclick="showTab('research', event)">Research</button>
+      <button class="tab" onclick="showTab('teaching', event)">Teaching</button>
+      <button class="tab" onclick="showTab('publications', event)">Publications</button>
+      <button class="tab" onclick="showTab('talks', event)">Talks</button>
     </div>
 
     <!-- Research content -->
@@ -182,77 +183,104 @@
 
     <!-- Teaching content -->
     <div id="teaching" class="tab-content">
-    
       <p>
         I am passionate about teaching and mentoring students. I strive to help students build strong conceptual understanding and practical skills through problem-solving, experiments, and discussion.
       </p>
-
-   
     </div>
 
     <!-- Publications content -->
     <div id="publications" class="tab-content">
-        <ul class="publication-list" style="list-style-type:none; padding-left:0;">
-          <li style="margin-bottom: 1em;">
-            <strong>Yoo, J.</strong>, Dickinson, J., Swartz, M., Di Guglielmo, G., Bean, A., Berry, D., Blanco Valentin, M., DiPetrillo, K., Fahim, F. K., Gray, L., Hirschauer, J., Kulkarni, S., Lipton, R., Maksimovic, P., Mills, C., Neubauer, M., Parpillon, B., Pradhan, G., Syal, C., Tran, N., Wen, D., & Young, A.
-            “<a href="https://iopscience.iop.org/article/10.1088/2632-2153/ad6a00" target="_blank" style="color:#0056b3; text-decoration:none;">Smart pixel sensors: Towards on-sensor filtering of pixel clusters with deep learning</a>”,
-            <em>Machine Learning: Science and Technology</em>, 2024.
-          </li>
-          <li style="margin-bottom: 1em;">
-            Taylor, C., Bhandari, B., Bian, J., Bilton, K., Callahan, C., Chaves, J., Chen, H., Cline, D., Cooper, R., Danielson, D., Danielson, J., Dokania, N., Elliot, S., Fernandes, S., Gardiner, S., Garvey, G., Gehman, V., Giuliani, F., Glavin, S., Gold, M., Grant, C., Guardincerri, E., Haines, T., Higuera, A., Ji, J., Kadel, R., Kamp, N., Karlin, A., Ketchum, W., Koerner, L., Lee, D., Lee, K., Liu, Q., Locke, S., Louis, W., Madigan, P., Manalaysay, A., Maricic, J., Martin, E., Martinez, M., Martynenko, S., Mauger, C., McGrew, C., Medina, J., Medina, P., Mills, A., Mills, G., Mirabal-Martinez, J., Olivier, A., Pantic, E., Philipbar, B., Pitcher, C., Radeka, V., Ramsey, J., Rielage, K., Rosen, M., Sanchez, A., Shin, J., Sinnis, G., Smy, M., Sondheim, W., Stancu, I., Sterbenz, C., Sun, Y., Svoboda, R., Teymourian, A., Thorn, C., Tull, C., Tzanov, M., Van de Water, R., Walsh, N., Wang, H., Wang, Y., Yanagisawa, C., Yarritu, A., & <strong>Yoo, J.</strong>
-            “<a href="https://doi.org/10.1016/j.nima.2021.165131" target="_blank" style="color:#0056b3; text-decoration:none;">The mini-captain liquid argon time projection chamber</a>”,
-            <em>Nuclear Instruments and Methods in Physics Research Section A</em>, vol. 1001, p. 165131, 2021.
-          </li>
-          
-          <li style="margin-bottom: 1em;">
-            Martynenko, S., Bhandari, B., Bian, J., Bilton, K., Callahan, C., Chaves, J., Chen, H., Cline, D., Cooper, R. L., Danielson, D. L., Danielson, J., Dokania, N., Elliott, S., Fernandes, S., Gardiner, S., Garvey, G., Gehman, V., Giuliani, F., Glavin, S., Gold, M., Grant, C., Guardincerri, E., Haines, T., Higuera, A., Ji, J. Y., Kadel, R., Kamp, N., Karlin, A., Ketchum, W., Koerner, L. W., Lee, D., Lee, K., Liu, Q., Locke, S., Louis, W. C., Maricic, J., Martin, E., Martinez, M. J., Mauger, C., McGrew, C., Medina, J., Medina, P. J., Mills, A., Mills, G., Mirabal-Martinez, J., Olivier, A., Pantic, E., Philipbar, B., Pitcher, C., Radeka, V., Ramsey, J., Rielage, K., Rosen, M., Sanchez, A. R., Shin, J., Sinnis, G., Smy, M., Sondheim, W., Stancu, I., Sterbenz, C., Sun, Y., Svoboda, R., Taylor, C., Teymourian, A., Thorn, C., Tull, C. E., Tzanov, M., Van de Water, R. G., Walker, D., Walsh, N., Wang, H., Wang, Y., Yanagisawa, C., Yarritu, A., & <strong>Yoo, J.</strong> (<em>CAPTAIN Collaboration</em>).
-            “<a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.072009" target="_blank" style="color:#0056b3; text-decoration:none;">Measurement of neutron-induced scintillation light yield in liquid argon</a>”,
-            <em>Physical Review D</em>, vol. 107, no. 7, p. 072009, 2023. American Physical Society.
-          </li>
+      <ul class="publication-list" style="list-style-type:none; padding-left:0;">
+        <li style="margin-bottom: 1em;">
+          <strong>Yoo, J.</strong>, Dickinson, J., Swartz, M., Di Guglielmo, G., Bean, A., Berry, D., Blanco Valentin, M., DiPetrillo, K., Fahim, F. K., Gray, L., Hirschauer, J., Kulkarni, S., Lipton, R., Maksimovic, P., Mills, C., Neubauer, M., Parpillon, B., Pradhan, G., Syal, C., Tran, N., Wen, D., & Young, A.
+          “<a href="https://iopscience.iop.org/article/10.1088/2632-2153/ad6a00" target="_blank" style="color:#0056b3; text-decoration:none;">Smart pixel sensors: Towards on-sensor filtering of pixel clusters with deep learning</a>”,
+          <em>Machine Learning: Science and Technology</em>, 2024.
+        </li>
+        <li style="margin-bottom: 1em;">
+          Taylor, C., Bhandari, B., Bian, J., Bilton, K., Callahan, C., Chaves, J., Chen, H., Cline, D., Cooper, R., Danielson, D., Danielson, J., Dokania, N., Elliot, S., Fernandes, S., Gardiner, S., Garvey, G., Gehman, V., Giuliani, F., Glavin, S., Gold, M., Grant, C., Guardincerri, E., Haines, T., Higuera, A., Ji, J., Kadel, R., Kamp, N., Karlin, A., Ketchum, W., Koerner, L., Lee, D., Lee, K., Liu, Q., Locke, S., Louis, W., Madigan, P., Manalaysay, A., Maricic, J., Martin, E., Martinez, M., Martynenko, S., Mauger, C., McGrew, C., Medina, J., Medina, P., Mills, A., Mills, G., Mirabal-Martinez, J., Olivier, A., Pantic, E., Philipbar, B., Pitcher, C., Radeka, V., Ramsey, J., Rielage, K., Rosen, M., Sanchez, A., Shin, J., Sinnis, G., Smy, M., Sondheim, W., Stancu, I., Sterbenz, C., Sun, Y., Svoboda, R., Teymourian, A., Thorn, C., Tull, C., Tzanov, M., Van de Water, R., Walsh, N., Wang, H., Wang, Y., Yanagisawa, C., Yarritu, A., & <strong>Yoo, J.</strong>
+          “<a href="https://doi.org/10.1016/j.nima.2021.165131" target="_blank" style="color:#0056b3; text-decoration:none;">The mini-captain liquid argon time projection chamber</a>”,
+          <em>Nuclear Instruments and Methods in Physics Research Section A</em>, vol. 1001, p. 165131, 2021.
+        </li>
+        <li style="margin-bottom: 1em;">
+          Martynenko, S., Bhandari, B., Bian, J., Bilton, K., Callahan, C., Chaves, J., Chen, H., Cline, D., Cooper, R. L., Danielson, D. L., Danielson, J., Dokania, N., Elliott, S., Fernandes, S., Gardiner, S., Garvey, G., Gehman, V., Giuliani, F., Glavin, S., Gold, M., Grant, C., Guardincerri, E., Haines, T., Higuera, A., Ji, J. Y., Kadel, R., Kamp, N., Karlin, A., Ketchum, W., Koerner, L. W., Lee, D., Lee, K., Liu, Q., Locke, S., Louis, W. C., Maricic, J., Martin, E., Martinez, M. J., Mauger, C., McGrew, C., Medina, J., Medina, P. J., Mills, A., Mills, G., Mirabal-Martinez, J., Olivier, A., Pantic, E., Philipbar, B., Pitcher, C., Radeka, V., Ramsey, J., Rielage, K., Rosen, M., Sanchez, A. R., Shin, J., Sinnis, G., Smy, M., Sondheim, W., Stancu, I., Sterbenz, C., Sun, Y., Svoboda, R., Taylor, C., Teymourian, A., Thorn, C., Tull, C. E., Tzanov, M., Van de Water, R. G., Walker, D., Walsh, N., Wang, H., Wang, Y., Yanagisawa, C., Yarritu, A., & <strong>Yoo, J.</strong> (<em>CAPTAIN Collaboration</em>).
+          “<a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.107.072009" target="_blank" style="color:#0056b3; text-decoration:none;">Measurement of neutron-induced scintillation light yield in liquid argon</a>”,
+          <em>Physical Review D</em>, vol. 107, no. 7, p. 072009, 2023. American Physical Society.
+        </li>
+      </ul>
 
-          
-        </ul>
+      <h3 style="color:#1a1a1a; border-bottom: 2px solid #ddd; padding-bottom: 6px; margin-top: 40px;">Conference Proceedings</h3>
 
-        <h3 style="color:#1a1a1a; border-bottom: 2px solid #ddd; padding-bottom: 6px; margin-top: 40px;">Conference Proceedings</h3>
+      <ul class="conference-list" style="list-style-type:none; padding-left:0;">
+        <li style="margin-bottom: 1em;">
+          Miniskar, N. R., Vanna-Iampikul, P., Young, A., Lim, S. K., Liu, F., <strong>Yoo, J.</strong>, Mills, C., Tran, N., Fahim, F., & Vetter, J. S.
+          “<a href="https://www.osti.gov/servlets/purl/1997610" style="color:#0056b3; text-decoration:none;">A 3d implementation of convolutional neural network for fast inference</a>”,
+          in <em>2023 IEEE International Symposium on Circuits and Systems (ISCAS)</em>, 2023.
+        </li>
+        <li style="margin-bottom: 1em;">
+          Kulkarni, S. R., Young, A., Date, P., Rao Miniskar, N., Vetter, J., Fahim, F., Parpillon, B., Dickinson, J., Tran, N., <strong>Yoo, J.</strong>, Mills, C., Swartz, M., Maksimovic, P., Schuman, C., & Bean, A.
+          “<a href="https://dl.acm.org/doi/pdf/10.1145/3589737.3605976" style="color:#0056b3; text-decoration:none;">On-sensor data filtering using neuromorphic computing for high energy physics experiments</a>”,
+          in <em>Proceedings of the 2023 International Conference on Neuromorphic Systems</em>, ser. ICONS ’23, Santa Fe, NM, USA: Association for Computing Machinery, 2023.
+        </li>
+        <li style="margin-bottom: 1em;">
+          Pata, J., Duarte, J., Mokhtar, F., Wulff, E., <strong>Yoo, J.</strong>, Vlimant, J.-R., Pierini, M., Girone, M., and on behalf of the CMS Collaboration,
+          “<a href="https://iopscience.iop.org/article/10.1088/1742-6596/2438/1/012100/pdf" style="color:#0056b3; text-decoration:none;">Machine Learning for Particle Flow Reconstruction at CMS</a>”,
+          vol. 2438, <em>Journal of Physics: Conference Series</em>, Feb. 2023.
+        </li>
+      </ul>
 
-        <ul class="conference-list" style="list-style-type:none; padding-left:0;">
-          <li style="margin-bottom: 1em;">
-            Miniskar, N. R., Vanna-Iampikul, P., Young, A., Lim, S. K., Liu, F., <strong>Yoo, J.</strong>, Mills, C., Tran, N., Fahim, F., & Vetter, J. S.
-            “<a href="https://www.osti.gov/servlets/purl/1997610" style="color:#0056b3; text-decoration:none;">A 3d implementation of convolutional neural network for fast inference</a>”,
-            in <em>2023 IEEE International Symposium on Circuits and Systems (ISCAS)</em>, 2023.
-          </li>
-          <li style="margin-bottom: 1em;">
-            Kulkarni, S. R., Young, A., Date, P., Rao Miniskar, N., Vetter, J., Fahim, F., Parpillon, B., Dickinson, J., Tran, N., <strong>Yoo, J.</strong>, Mills, C., Swartz, M., Maksimovic, P., Schuman, C., & Bean, A.
-            “<a href="https://dl.acm.org/doi/pdf/10.1145/3589737.3605976" style="color:#0056b3; text-decoration:none;">On-sensor data filtering using neuromorphic computing for high energy physics experiments</a>”,
-            in <em>Proceedings of the 2023 International Conference on Neuromorphic Systems</em>, ser. ICONS ’23, Santa Fe, NM, USA: Association for Computing Machinery, 2023.
-          </li>
-          <li style="margin-bottom: 1em;">
-            Pata, J., Duarte, J., Mokhtar, F., Wulff, E., <strong>Yoo, J.</strong>, Vlimant, J.-R., Pierini, M., Girone, M., and on behalf of the CMS Collaboration,
-            “<a href="https://iopscience.iop.org/article/10.1088/1742-6596/2438/1/012100/pdf" style="color:#0056b3; text-decoration:none;">Machine Learning for Particle Flow Reconstruction at CMS</a>”,
-            vol. 2438, <em>Journal of Physics: Conference Series</em>, Feb. 2023.
-          </li>
-        </ul>
-
-        
-
-      
       <div class="links" style="margin-top: 20px;">
         <a href="https://scholar.google.com/citations?user=SLqknaIAAAAJ&hl=en" target="_blank">Google Scholar</a>
       </div>
+    </div>
 
+    <!-- Talks content -->
+    <div id="talks" class="tab-content">
+      <ul style="padding-left: 0; list-style-type: none;">
+        <li style="margin-bottom: 1em;">
+    
+          <strong>Search for boosted Higgs decay to semi-leptonic WW in association with a hadronically decaying V boson</strong><br /> APS Global Physics Summit, Anaheim, CA, 3/25
+        </li>
+        <li style="margin-bottom: 1em;">
+          <strong>Smart Pixels: Towards radiation hard ASICs with on-chip machine learning in 28nm CMOS,</strong><br />
+          Fast Machine Learning for Science Conference 2024, Purdue Univ., IN, 10/24
+        </li>
+        <li style="margin-bottom: 1em;">
+          <strong>Smart Pixel Sensors for the HL-LHC </strong><br />
+          US-Korea Conference (UKC) 2024, San Francisco, CA, 8/24
+        </li>
+        <li style="margin-bottom: 1em;">
+          <strong>Smart Pixel Sensors for the HL-LHC </strong><br />
+          New Perspectives, Fermilab, 7/24
+        </li>
+        <li style="margin-bottom: 1em;">
+          <strong> Front-end neural network filtering implemented in a silicon pixel detector  </strong><br />
+          Coordinating Panel for Advanced Detectors (CPAD), Stanford, CA, 11/23
+        </li>
+        <li style="margin-bottom: 1em;">
+          <strong> The CAPTAIN-MINERvA Experiment  </strong><br />
+          April APS Meeting, Salt Lake City, UT, 4/16
+        </li>
+        <li style="margin-bottom: 1em;">
+          <strong> Electron Nuclear Dynamics Simulations of Proton Collisions with Water in Proton Cancer Therapy </strong><br />
+          Joint Spring 2013 Meeting of the Texas Sections of the APS and AAPT and Zone 13 of the SPS, 4/13
+        </li>
+         
+        
+        
+      </ul>
     </div>
   </div>
 
   <footer>© 2025 Jieun Yoo</footer>
 
   <script>
-    function showTab(tabId) {
+    function showTab(tabId, event) {
       // Hide all tab contents
-      document.querySelectorAll(".tab-content").forEach((el) =>
+      document.querySelectorAll(".tab-content").forEach(el =>
         el.classList.remove("active")
       );
       // Remove active class from all tabs
-      document.querySelectorAll(".tab").forEach((el) =>
+      document.querySelectorAll(".tab").forEach(el =>
         el.classList.remove("active")
       );
       // Activate selected tab and content
