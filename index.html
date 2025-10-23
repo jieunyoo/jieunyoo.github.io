@@ -12,16 +12,6 @@
       padding: 0;
     }
 
-.profile-photo {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  display: block;
-}
-
-
     .container {
       max-width: 800px;
       margin: 100px auto;
@@ -44,6 +34,15 @@
       margin-bottom: 30px;
     }
 
+    .profile-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      display: block;
+    }
+
     .links {
       margin-top: 20px;
     }
@@ -64,6 +63,72 @@
       color: white;
     }
 
+    /* --- Tab Styles --- */
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 18px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .tab:hover {
+      color: #0056b3;
+    }
+
+    .tab.active {
+      border-color: #0056b3;
+      color: #0056b3;
+      font-weight: bold;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Teaching section styles */
+    h2 {
+      font-size: 26px;
+      color: #1a1a1a;
+      margin-top: 30px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 6px;
+    }
+
+    .teaching-photo {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 6px;
+      margin: 20px 0;
+      display: block;
+    }
+
+    .teaching-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .teaching-list li {
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .teaching-list strong {
+      color: #0056b3;
+    }
+
     footer {
       text-align: center;
       font-size: 14px;
@@ -76,22 +141,54 @@
 
   <div class="container">
     <h1>Jieun Yoo</h1>
+    <img src="profile.jpg" alt="Jieun Yoo photo" class="profile-photo">
 
-<img src="profile.jpg" alt="Jieun Yoo photo" class="profile-photo">
-    <p>
-      Hi. I completed my PhD in May 2025 at Univ. Illinois Chicago (UIC) in the field of experimental particle physics. I'm interested in searches for new physics, and in developing the next generation of detectors that will help us push the bounds of our knowledge of the physical world.
-    </p>
-
-    <div class="links">
-      <a href="https://scholar.google.com/citations?user=SLqknaIAAAAJ&hl=en" target="_blank">Google Scholar</a>
-      <a href="https://github.com/jieunyoo" target="_blank">GitHub Profile</a>
-      <a href="https://onehundredmountains.netlify.app/" target="_blank"> Hiking Blog</a>
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('research')">Research</button>
+      <button class="tab" onclick="showTab('teaching')">Teaching</button>
     </div>
+
+    <!-- Research content -->
+    <div id="research" class="tab-content active">
+      <p>
+        Hi. I completed my PhD in May 2025 at Univ. Illinois Chicago (UIC) in the field of experimental particle physics. I'm interested in searches for new physics, and in developing the next generation of detectors that will help us push the bounds of our knowledge of the physical world.
+      </p>
+
+      <div class="links">
+        <a href="https://scholar.google.com/citations?user=SLqknaIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+      </div>
+    </div>
+
+    <!-- Teaching content -->
+    <div id="teaching" class="tab-content">
+
+      <p>
+        I am passionate about teaching and mentoring students in physics. 
+        I strive to help students build strong conceptual understanding and 
+        practical skills through problem-solving, experiments, and discussion.
+      </p>
+
+    </div>
+
   </div>
 
   <footer>
     © 2025 Jieun Yoo
   </footer>
 
+  <script>
+    function showTab(tabId) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      // Remove active class from all tabs
+      document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+      // Activate selected tab and content
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
+
